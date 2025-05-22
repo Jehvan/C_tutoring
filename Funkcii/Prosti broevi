@@ -1,27 +1,25 @@
 #include<stdio.h>
 
-int prost(int broj) {
-  int bool = 1;
+int prost_broj(int broj){
+  int prost = 1;
   for (int i = 2; i < broj; i++){
-      if (broj % i == 0){
-          bool = 0;
-      }
-  }
-  return bool;
-}
-
-int pecati(int broj){
-    for (int i = 1; i <= broj; i++) {
-      if(prost(i)) {
-        printf("%d ",i);
-      }
+    if(broj % i == 0){
+      prost = 0;
+      break;
     }
+  }
+  return prost;
 }
 
-int main(){
-    int broj;
-    scanf("%d", &broj);
-    int if_prost = prost(broj);
-    if_prost ? pecati(broj) : printf("Ne e prost brojot");
-    return 0;
+
+int main() {
+  int broj;
+  scanf("%d",&broj);
+
+  if(prost_broj(broj) == 1){
+    printf("Brojot e prost.");
+  } else {
+    printf("Brojot ne e prost.");
+  }
+  return 0;
 }

@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+int suma (int n, int a[]) {
+  int s = 0;
+  for (int i = 0; i < n; i++){
+    s += a[i];
+  }
+  return s;
+}
+
+int main() {
+  int m,n,x[10][10],a[10],s;
+  scanf("%d %d", &m, &n);
+  for (int i = 0; i < m; i++){
+    for (int j = 0; j < n; j++) {
+      scanf("%d", &x[i][j]);
+    }
+  }
+  for (int j = 0; j < n; j++) {
+    a[j] = x[0][j];
+  }
+  printf("%d",suma(n,a));
+  return 0;
+}
